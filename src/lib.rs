@@ -211,9 +211,11 @@ mod tests {
 	#[test]
 	fn it_decays() {
 		unsafe {
-			let x = u235::new(16);
+			let x = u235::new(32);
 			assert!(x.to_u64() > 0);
-			thread::sleep(Duration::from_secs(2));
+			thread::sleep(Duration::from_secs(1));
+			assert!(x.to_u64() > 0);
+			thread::sleep(Duration::from_secs(1));
 			assert_eq!(x.to_u64(), 0);						
 		}
 	}
